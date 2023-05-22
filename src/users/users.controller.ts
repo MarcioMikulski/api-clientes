@@ -5,6 +5,7 @@ import {
   Patch,
   Delete,
   Body,
+  UseGuards,
   Param,
   BadRequestException,
 } from '@nestjs/common';
@@ -12,6 +13,7 @@ import { UserService } from './users.service';
 import { UserDto } from './dto/users.dto';
 import { UpdateUserDto } from './dto/updateUsers.dto';
 import { User } from './entities/users.entity';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('users')
 export class UsersController {
@@ -23,6 +25,7 @@ export class UsersController {
   }
 
   @Get(':id')
+  @UseGuards(AuthGuard)
   async getUser(@Param('id') id: number) {
     if (id) {
       return await this.userService.findOne(id);

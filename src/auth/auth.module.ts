@@ -7,7 +7,6 @@ import { User } from '../users/entities/users.entity';
 import { UserService } from '../users/users.service';
 import { AuthService } from './auth.service';
 import { Encrypt } from './encrypt';
-
 //import { LocalStrategy } from './local.auth';
 import { AuthController } from './auth.controller';
 
@@ -16,7 +15,7 @@ import { AuthController } from './auth.controller';
     TypeOrmModule.forFeature([User]),
     PassportModule,
     JwtModule.register({
-      secret: 'meuovo',
+      secret: process.env.JWT_SECRET || 'meuovo',
       signOptions: {
         expiresIn: '1h',
       },
