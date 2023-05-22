@@ -8,7 +8,7 @@ import { UserService } from '../users/users.service';
 import { AuthService } from './auth.service';
 import { Encrypt } from './encrypt';
 
-import { LocalStrategy } from './local.auth';
+//import { LocalStrategy } from './local.auth';
 import { AuthController } from './auth.controller';
 
 @Module({
@@ -24,6 +24,6 @@ import { AuthController } from './auth.controller';
     Encrypt,
   ],
   controllers: [AuthController],
-  providers: [AuthService, UserService, LocalStrategy],
+  providers: [AuthService, UserService],
 })
 export class AuthModule {}

@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  NotAcceptableException,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/users/entities/users.entity';
 import { UserService } from 'src/users/users.service';

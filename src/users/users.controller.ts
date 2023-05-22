@@ -7,13 +7,10 @@ import {
   Body,
   Param,
   BadRequestException,
-  HttpException,
-  HttpStatus,
 } from '@nestjs/common';
 import { UserService } from './users.service';
-import { UserDto } from './users.dto';
-import { UpdateUserDto } from './updateUsers.dto';
-import { error } from 'console';
+import { UserDto } from './dto/users.dto';
+import { UpdateUserDto } from './dto/updateUsers.dto';
 import { User } from './entities/users.entity';
 
 @Controller('users')
